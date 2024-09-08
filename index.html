@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Editable Resume Builder</h2>
+            <form id="resume-form">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="contact">Contact #:</label>
+                    <input type="number" id="contact" name="contact" required>
+                    
+                    <label for="profile-pic-upload">Profile Picture:</label>
+                    <input type="file" id="profile-pic-upload" name="profile-pic-upload" accept="image/*">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Education</legend>
+                    <div id="education-fields">
+                        <div class="education-entry">
+                            <label for="edu-school-1">Institute:</label>
+                            <input type="text" id="edu-institute-1" name="edu-institute" required>
+
+                            <label for="edu-degree-1">Degree:</label>
+                            <input type="text" id="edu-degree-1" name="edu-degree" required>
+
+                            <label for="edu-year-1">Year:</label>
+                            <input type="text" id="edu-year-1" name="edu-year" required>
+                        </div>
+                    </div>
+                    <button type="button" id="add-education">Add More Education</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Work Experience</legend>
+                    <div id="work-experience-fields">
+                        <div class="work-experience-entry">
+                            <label for="work-company-1">Company:</label>
+                            <input type="text" id="work-company-1" name="work-company" required>
+
+                            <label for="work-role-1">Role:</label>
+                            <input type="text" id="work-role-1" name="work-role" required>
+
+                            <label for="work-period-1">Period:</label>
+                            <input type="text" id="work-period-1" name="work-period" required>
+                        </div>
+                    </div>
+                    <button type="button" id="add-work-experience">Add More Work Experience</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Skills</legend>
+                    <textarea id="skills" name="skills" placeholder="List your skills, separated by commas" required></textarea>
+                </fieldset>
+
+                <button type="submit">Generate Resume</button>
+            </form>
+        </div>
+
+        <div class="resume-container" id="resume-container">
+            <header class="resume-header" id="resume-header" contenteditable="true">
+                <div class="profile-img-container">
+                    <img id="profile-img" src="" alt="Profile picture" class="profile-img">
+                </div>
+                <div>
+                    <h1 id="resume-name" contenteditable="true">Your Name</h1>
+                    <p id="resume-email" contenteditable="true">Email: your.email@example.com</p>
+                    <p id="resume-contact" contenteditable="true">Contact #: (123) 456-7890</p>
+                </div>
+            </header>
+            <div class="resume-content">
+                <aside class="resume-sidebar">
+                    <h2>Skills</h2>
+                    <section id="skills-section" class="resume-section" contenteditable="true">
+                        <!-- Skills list here -->
+                    </section>
+                </aside>
+                <section class="resume-main">
+                    <h2>Education</h2>
+                    <section id="education" class="resume-section" contenteditable="true">
+                        <!-- Education list here -->
+                    </section>
+                    <h2>Work Experience</h2>
+                    <section id="work-experience" class="resume-section" contenteditable="true">
+                        <!-- Work experience list here -->
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
